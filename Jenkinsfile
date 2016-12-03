@@ -8,7 +8,7 @@ node {
     stage ('Build') {
         println '********** CHEN ***********'
         echo '********** CHEN ***********'
-        // echo ${BUILD_NUMBER}
+        echo "${BUILD_NUMBER}"
         // echo "entering stage 1 ..."
         // def workspace = pwd()
         // load "utils.groovy"
