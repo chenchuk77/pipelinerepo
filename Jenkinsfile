@@ -1,4 +1,4 @@
-#!/usr/bin/groovy
+#!groovy
 
 // Jenkinsfile url:
 // https://github.com/chenchuk77/pipelinerepo.git
@@ -13,11 +13,12 @@ node {
         // def workspace = pwd()
         // load "utils.groovy"
         // load "${workspace}@script/esb_deploybar_pipeline/deploy_esb.groovy"
-        // sh """
-        //    echo $pwd
-        //    ls -lstr
-        //    echo '--------------------------------'
-        // """
+        sh """
+            pwd
+            ls -lstr
+            echo '333333333333'
+            cat < hello.txt
+        """
     }
     stage('Test') {
         echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
