@@ -12,6 +12,8 @@ node {
         echo "entering stage 1 ... of build: ${BUILD_NUMBER}"
         def workspace = pwd()
         echo workspace
+        // load "utils.groovy"
+        // load "utils.groovy"
         // load "${workspace}@script/esb_deploybar_pipeline/deploy_esb.groovy"
         sh """
             pwd
@@ -19,6 +21,7 @@ node {
             echo '333333333333'
             cat < hello.txt
             cat Jenkinsfile
+            echo "${BUILD_NUMBER}th build ..." >> build.num
         """
     }
     stage('Test') {
