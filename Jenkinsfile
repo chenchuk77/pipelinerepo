@@ -4,9 +4,13 @@
 // https://github.com/chenchuk77/pipelinerepo.git
 
 
-node { // <1>
-    stage('Build') { // <2>
+node {
+    stage('Build') {
         echo "entering stage 1 ..."
+        def workspace = pwd()
+        load "utils.groovy"
+        // load "${workspace}@script/esb_deploybar_pipeline/deploy_esb.groovy"
+
     }
     stage('Test') {
         echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
