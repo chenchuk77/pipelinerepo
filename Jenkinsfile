@@ -1,4 +1,4 @@
-#!/usr/bin/groovy
+#!groovy
 
 // Jenkinsfile url:
 // https://github.com/chenchuk77/pipelinerepo.git
