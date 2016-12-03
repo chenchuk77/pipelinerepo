@@ -28,6 +28,8 @@ node {
     }
     stage('Test') {
         echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
+        echo "using utility from utils.groovy file"
+        utils.sayHello()
     }
     stage('Deploy') {
         /* .. snip .. */
