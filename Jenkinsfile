@@ -5,6 +5,10 @@
 //
 
 node {
+    // global for all stages
+    def utils = load "${workspace}@script/repo/utils.groovy"
+
+
     stage ('Build') {
         println '********** CHEN ***********'
         echo '********** CHEN ***********'
@@ -16,7 +20,6 @@ node {
 
         // load "utils.groovy"
         // load "utils.groovy"
-        def utils = load "${workspace}@script/repo/utils.groovy"
         sh """
             pwd
             ls -lstr
@@ -32,7 +35,7 @@ node {
     stage('Test') {
         echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
         echo "using utility from utils.groovy file"
-        //utils.sayHello()
+        utils.sayHello()
     }
     stage('Deploy') {
         /* .. snip .. */
