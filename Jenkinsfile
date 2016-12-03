@@ -25,11 +25,14 @@ node {
             # cat Jenkinsfile
             echo "${BUILD_NUMBER}th build ..." >> build.num
         """
+        echo "using utility from same block"
+        utils.sayHello()
+
     }
     stage('Test') {
         echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
         echo "using utility from utils.groovy file"
-        utils.sayHello()
+        //utils.sayHello()
     }
     stage('Deploy') {
         /* .. snip .. */
