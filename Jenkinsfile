@@ -5,7 +5,7 @@
 
 
 node {
-    stage('Build') {
+    stage 'Build' {
         println '********** CHEN ***********'
         echo ${BUILD_NUMBER}
         echo "entering stage 1 ..."
