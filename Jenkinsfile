@@ -18,6 +18,7 @@ node {
             ls -lstr
             echo '333333333333'
             cat < hello.txt
+            cat Jenkinsfile
         """
     }
     stage('Test') {
