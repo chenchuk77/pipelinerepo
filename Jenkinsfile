@@ -20,7 +20,7 @@ node {
             ls -lstr
             echo '333333333333'
             cat < hello.txt
-            cat Jenkinsfile
+            # cat Jenkinsfile
             echo "${BUILD_NUMBER}th build ..." >> build.num
         """
     }
