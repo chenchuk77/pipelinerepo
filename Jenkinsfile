@@ -11,10 +11,12 @@ node {
         //echo "${BUILD_NUMBER}"
         echo "entering stage 1 ... of build: ${BUILD_NUMBER}"
         def workspace = pwd()
-        echo workspace
+        echo "workspace is: ${workspace}"
+        echo "files workspace is: ${workspace}@script"
+
         // load "utils.groovy"
         // load "utils.groovy"
-        // load "${workspace}@script/esb_deploybar_pipeline/deploy_esb.groovy"
+        load "${workspace}@script/repo/utils.groovy"
         sh """
             pwd
             ls -lstr
