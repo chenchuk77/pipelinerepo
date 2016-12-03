@@ -1,5 +1,9 @@
 #!/usr/bin/groovy
 
+// Jenkinsfile url:
+// https://github.com/chenchuk77/pipelinerepo.git
+
+
 node { // <1>
     stage('Build') { // <2>
         echo "entering stage 1 ..."
