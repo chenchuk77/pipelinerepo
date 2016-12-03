@@ -1,43 +1,27 @@
 #!groovy
 
-// Jenkinsfile url:
-// https://github.com/chenchuk77/pipelinerepo.git
-//
+// Jenkinsfile url: https://github.com/chenchuk77/pipelinerepo.git
+
+
 
 node {
     // global for all stages
+    def workspace = pwd()
     def utils = load "${workspace}@script/repo/utils.groovy"
 
-
     stage ('Build') {
-        println '********** CHEN ***********'
-        echo '********** CHEN ***********'
-        //echo "${BUILD_NUMBER}"
-        echo "entering stage 1 ... of build: ${BUILD_NUMBER}"
-        def workspace = pwd()
-        echo "workspace is: ${workspace}"
-        echo "files workspace is: ${workspace}@script"
-
-        // load "utils.groovy"
-        // load "utils.groovy"
-        sh """
-            pwd
-            ls -lstr
-            echo '333333333333'
-            cat < hello.txt
-            # cat Jenkinsfile
-            echo "${BUILD_NUMBER}th build ..." >> build.num
-        """
-        echo "using utility from same block"
-        utils.sayHello()
-
+        echo "entering stage 1"
+        utils.buildCode()
     }
     stage('Test') {
         echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
-        echo "using utility from utils.groovy file"
-        utils.sayHello()
+        utils.runTests(5)
     }
     stage('Deploy') {
-        /* .. snip .. */
+        echo "entering stage 3 ... deploy by shell block"
+        sh """
+            pwd
+            echo "deploying build: ${BUILD_NUMBER}"
+        """
     }
 }

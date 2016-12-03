@@ -1,7 +1,20 @@
 
 def sayHello(){
-    print 'hello from utils.groovy file'
+    println 'hello from utils.groovy file'
 }
+
+def buildCode(){
+    println 'simulation: building code ...'
+    Thread.sleep(3000)
+    println 'done.'
+}
+
+def runTests(numOfTests){
+    println 'simulation: running ' + numOfTests + ' test ...'
+    Thread.sleep(5000)
+    println 'done .'
+}
+
 
 
 def devQAStaging() {
