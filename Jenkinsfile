@@ -16,7 +16,7 @@ node {
 
         // load "utils.groovy"
         // load "utils.groovy"
-        load "${workspace}@script/repo/utils.groovy"
+        def utils = load "${workspace}@script/repo/utils.groovy"
         sh """
             pwd
             ls -lstr
