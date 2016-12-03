@@ -15,6 +15,7 @@ node {
             echo $pwd
             ls -lstr
             echo '--------------------------------'
+        '''
     }
     stage('Test') {
         echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
