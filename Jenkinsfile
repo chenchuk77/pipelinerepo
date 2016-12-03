@@ -5,24 +5,16 @@
 
 
 node {
-    stage 'Build' {
-        println '********** CHEN ***********'
-        echo '********** CHEN ***********'
-        // echo ${BUILD_NUMBER}
-        // echo "entering stage 1 ..."
-        // def workspace = pwd()
-        // load "utils.groovy"
-        // load "${workspace}@script/esb_deploybar_pipeline/deploy_esb.groovy"
-        // sh """
-        //    echo $pwd
-        //    ls -lstr
-        //    echo '--------------------------------'
-        // """
-    }
-    stage('Test') {
-        echo "entering stage 2 ... build: ${env.BUILD_NUMBER}"
-    }
-    stage('Deploy') {
-        /* .. snip .. */
-    }
+   stage 'test'
+   def whatThe = someFunc('textToFunc')
+   def whatThe2 = someFunc2('textToFunc2')
+}
+
+def someFunc(String text){
+    echo text
+    text
+}
+def someFunc2(String text2){
+    echo text2
+    text2
 }
