@@ -8,10 +8,10 @@ node {
     stage ('Build') {
         println '********** CHEN ***********'
         echo '********** CHEN ***********'
-        echo "${BUILD_NUMBER}"
-        // echo "entering stage 1 ..."
-        // def workspace = pwd()
-        // load "utils.groovy"
+        //echo "${BUILD_NUMBER}"
+        echo "entering stage 1 ... of build: ${BUILD_NUMBER}"
+        def workspace = pwd()
+        echo workspace
         // load "${workspace}@script/esb_deploybar_pipeline/deploy_esb.groovy"
         sh """
             pwd
